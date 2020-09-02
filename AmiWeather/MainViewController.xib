@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="AmiWeather" customModuleProvider="target">
+            <connections>
+                <outlet property="searchTF" destination="Xn7-Wf-Zpc" id="iLk-4z-E3f"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AmiWeather" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bp3-0Q-UCp">
+                    <rect key="frame" x="20" y="74" width="374" height="38.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0ce-4L-n4V">
+                    <rect key="frame" x="364" y="212.5" width="30" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="30" id="Uvz-ib-Wrf"/>
+                        <constraint firstAttribute="height" constant="30" id="gf8-br-Uzm"/>
+                    </constraints>
+                    <state key="normal" image="mapicon"/>
+                    <connections>
+                        <action selector="mapBtnTapped:" destination="-1" eventType="touchUpInside" id="neA-ev-x7m"/>
+                    </connections>
+                </button>
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Xn7-Wf-Zpc">
+                    <rect key="frame" x="20" y="210.5" width="334" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfw-d6-caf">
+                    <rect key="frame" x="221" y="264.5" width="173" height="30"/>
+                    <state key="normal" title="Use your current location"/>
+                    <connections>
+                        <action selector="useCurrentLocationBtnTapped:" destination="-1" eventType="touchUpInside" id="8pf-Nx-ND8"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wx-EZ-emu">
+                    <rect key="frame" x="20" y="344.5" width="374" height="40"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="WBb-JZ-rwP"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                    <state key="normal" title="Show Weather Forcast"/>
+                    <connections>
+                        <action selector="showWeatherBtnTapped:" destination="-1" eventType="touchUpInside" id="6je-GW-bvg"/>
+                    </connections>
+                </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a location (city/state/country/zipcode/etc) or use your current location" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kU1-Pp-gv7">
+                    <rect key="frame" x="20" y="142.5" width="374" height="43"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.16004245419999999" green="0.80605508770000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="Sfw-d6-caf" firstAttribute="top" secondItem="Xn7-Wf-Zpc" secondAttribute="bottom" constant="20" id="1KR-at-cbT"/>
+                <constraint firstItem="5Wx-EZ-emu" firstAttribute="top" secondItem="Sfw-d6-caf" secondAttribute="bottom" constant="50" id="9ES-oF-pmh"/>
+                <constraint firstItem="bp3-0Q-UCp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Kte-c8-Ykr"/>
+                <constraint firstItem="Xn7-Wf-Zpc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L0X-cV-LaE"/>
+                <constraint firstItem="0ce-4L-n4V" firstAttribute="centerY" secondItem="Xn7-Wf-Zpc" secondAttribute="centerY" id="LXx-aG-rag"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="0ce-4L-n4V" secondAttribute="trailing" constant="20" id="PK4-0j-6eh"/>
+                <constraint firstItem="kU1-Pp-gv7" firstAttribute="top" secondItem="bp3-0Q-UCp" secondAttribute="bottom" constant="30" id="a6S-Zb-yvD"/>
+                <constraint firstItem="Xn7-Wf-Zpc" firstAttribute="top" secondItem="kU1-Pp-gv7" secondAttribute="bottom" constant="25" id="dzk-cA-S1O"/>
+                <constraint firstItem="5Wx-EZ-emu" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="h9W-HT-dyH"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sfw-d6-caf" secondAttribute="trailing" constant="20" id="i4l-Lh-z2F"/>
+                <constraint firstItem="kU1-Pp-gv7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m1m-fb-DL5"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Wx-EZ-emu" secondAttribute="trailing" constant="20" id="mBA-xo-vHN"/>
+                <constraint firstItem="bp3-0Q-UCp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="mKP-yQ-Wpf"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kU1-Pp-gv7" secondAttribute="trailing" constant="20" id="p9e-AR-b6c"/>
+                <constraint firstItem="0ce-4L-n4V" firstAttribute="leading" secondItem="Xn7-Wf-Zpc" secondAttribute="trailing" constant="10" id="s3Q-P4-rJw"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bp3-0Q-UCp" secondAttribute="trailing" constant="20" id="wfN-OR-08p"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="132" y="128"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="mapicon" width="30" height="30"/>
+    </resources>
+</document>
