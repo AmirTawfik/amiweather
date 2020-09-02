@@ -45,6 +45,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
         }
         
         // open map with selected location
+        let locationOnMapVC = LocationOnMapViewController()
+        locationOnMapVC.locationDesc = self.currentLocationDesc
+        locationOnMapVC.locationLat = currentLocationLat
+        locationOnMapVC.locationLon = currentLocationLon
+        self.navigationController?.pushViewController(locationOnMapVC, animated: true)
     }
     
     @IBAction func useCurrentLocationBtnTapped(_ sender: UIButton) {

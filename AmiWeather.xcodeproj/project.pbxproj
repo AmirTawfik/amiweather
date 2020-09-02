@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -19,6 +19,8 @@
 		FC0CFD1524FFC04D00A80FB5 /* AmiWeatherUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CFD1424FFC04D00A80FB5 /* AmiWeatherUITests.swift */; };
 		FC0CFD2424FFC2A800A80FB5 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CFD2224FFC2A800A80FB5 /* MainViewController.swift */; };
 		FC0CFD2524FFC2A800A80FB5 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC0CFD2324FFC2A800A80FB5 /* MainViewController.xib */; };
+		FC0CFD2825001DB500A80FB5 /* LocationOnMapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC0CFD2625001DB500A80FB5 /* LocationOnMapViewController.swift */; };
+		FC0CFD2925001DB500A80FB5 /* LocationOnMapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC0CFD2725001DB500A80FB5 /* LocationOnMapViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +65,8 @@
 		FC0CFD1624FFC04D00A80FB5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FC0CFD2224FFC2A800A80FB5 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		FC0CFD2324FFC2A800A80FB5 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		FC0CFD2625001DB500A80FB5 /* LocationOnMapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationOnMapViewController.swift; sourceTree = "<group>"; };
+		FC0CFD2725001DB500A80FB5 /* LocationOnMapViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LocationOnMapViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,7 +117,6 @@
 				ACB9647679B1EE3C54E39D96 /* Pods-AmiWeatherTests.debug.xcconfig */,
 				6A56CA648F922660A0004201 /* Pods-AmiWeatherTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -150,6 +153,8 @@
 				FC0CFD0024FFC04D00A80FB5 /* Info.plist */,
 				FC0CFD2224FFC2A800A80FB5 /* MainViewController.swift */,
 				FC0CFD2324FFC2A800A80FB5 /* MainViewController.xib */,
+				FC0CFD2625001DB500A80FB5 /* LocationOnMapViewController.swift */,
+				FC0CFD2725001DB500A80FB5 /* LocationOnMapViewController.xib */,
 			);
 			path = AmiWeather;
 			sourceTree = "<group>";
@@ -285,6 +290,7 @@
 			files = (
 				FC0CFCFF24FFC04D00A80FB5 /* LaunchScreen.storyboard in Resources */,
 				FC0CFCFC24FFC04D00A80FB5 /* Assets.xcassets in Resources */,
+				FC0CFD2925001DB500A80FB5 /* LocationOnMapViewController.xib in Resources */,
 				FC0CFCFA24FFC04600A80FB5 /* Main.storyboard in Resources */,
 				FC0CFD2524FFC2A800A80FB5 /* MainViewController.xib in Resources */,
 			);
@@ -449,6 +455,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC0CFD2424FFC2A800A80FB5 /* MainViewController.swift in Sources */,
+				FC0CFD2825001DB500A80FB5 /* LocationOnMapViewController.swift in Sources */,
 				FC0CFCF724FFC04600A80FB5 /* ViewController.swift in Sources */,
 				FC0CFCF324FFC04600A80FB5 /* AppDelegate.swift in Sources */,
 			);
