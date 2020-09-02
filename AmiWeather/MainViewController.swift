@@ -8,8 +8,11 @@
 
 import UIKit
 import CoreLocation
+import GooglePlaces
 
-class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate {
+class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, GMSAutocompleteViewControllerDelegate {
+
+    
 
     @IBOutlet var searchTF: UITextField!
     
@@ -62,6 +65,11 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
         searchTF.text = currentLocationDesc
     }
     
+    @IBAction func clearBtnTapped(_ sender: UIButton) {
+        deleteCurrentLocation()
+        searchTF.text = currentLocationDesc
+    }
+    
     @IBAction func showWeatherBtnTapped(_ sender: UIButton) {
         hideKeyboard()
         
@@ -76,6 +84,28 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
     
     func hideKeyboard() {
         searchTF.resignFirstResponder()
+    }
+    
+    func showGooglePlacesAutoComplete() {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+
+        // Specify the place data types to return.
+        let fields: GMSPlaceField = GMSPlaceField(rawValue:UInt(GMSPlaceField.name.rawValue) |
+                    UInt(GMSPlaceField.placeID.rawValue) |
+                    UInt(GMSPlaceField.coordinate.rawValue) |
+                    GMSPlaceField.addressComponents.rawValue |
+                    GMSPlaceField.formattedAddress.rawValue)!
+        autocompleteController.placeFields = fields
+
+        // Specify a filter.
+        let filter = GMSAutocompleteFilter()
+        filter.type = .noFilter
+        autocompleteController.autocompleteFilter = filter
+
+        // Display the autocomplete view controller.
+        present(autocompleteController, animated: true, completion: nil)
+
     }
     
     /*
@@ -102,6 +132,16 @@ extension MainViewController {
          if let lon = locationManager?.location?.coordinate.longitude {
              currentLocationLon = lon
          }
+    }
+
+    func setupGMSPlaceLocation(with place:GMSPlace) {
+        isLocationSelected = true
+        if let address = place.formattedAddress {
+            currentLocationDesc = address
+        }
+        // get lat,lon
+        currentLocationLat = place.coordinate.latitude
+        currentLocationLon = place.coordinate.longitude
     }
     
     func deleteCurrentLocation() {
@@ -134,14 +174,10 @@ extension MainViewController {
 
 // MARK: - Text Field Delegate
 extension MainViewController {
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-        textField.resignFirstResponder()
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         // show Google Places Autocomplete dialog
-    }
-    
-    func textFieldShouldClear(_ textField: UITextField) -> Bool {
-        deleteCurrentLocation()
-        return true
+         showGooglePlacesAutoComplete()
+        return false
     }
 }
 
@@ -159,4 +195,34 @@ extension MainViewController {
             self.locationManager?.requestAlwaysAuthorization()
         }
     }
+}
+
+// MARK: - Google Places Autocomplete
+extension MainViewController {
+    // Handle the user's selection.
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        setupGMSPlaceLocation(with: place)
+        self.searchTF.text = self.currentLocationDesc
+        dismiss(animated: true, completion: nil)
+    }
+
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+      // TODO: handle the error.
+      print("Error: ", error.localizedDescription)
+    }
+
+    // User canceled the operation.
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+      dismiss(animated: true, completion: nil)
+    }
+
+    // Turn the network activity indicator on and off again.
+    func didRequestAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    }
+
+    func didUpdateAutocompletePredictions(_ viewController: GMSAutocompleteViewController) {
+      UIApplication.shared.isNetworkActivityIndicatorVisible = false
+    }
+
 }

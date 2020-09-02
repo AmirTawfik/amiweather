@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -35,20 +36,21 @@
                         <action selector="mapBtnTapped:" destination="-1" eventType="touchUpInside" id="neA-ev-x7m"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Xn7-Wf-Zpc">
+                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Xn7-Wf-Zpc">
                     <rect key="frame" x="20" y="210.5" width="334" height="34"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sfw-d6-caf">
-                    <rect key="frame" x="221" y="264.5" width="173" height="30"/>
+                    <rect key="frame" x="241" y="254.5" width="153" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
                     <state key="normal" title="Use your current location"/>
                     <connections>
                         <action selector="useCurrentLocationBtnTapped:" destination="-1" eventType="touchUpInside" id="8pf-Nx-ND8"/>
                     </connections>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5Wx-EZ-emu">
-                    <rect key="frame" x="20" y="344.5" width="374" height="40"/>
+                    <rect key="frame" x="20" y="307.5" width="374" height="40"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="40" id="WBb-JZ-rwP"/>
                     </constraints>
@@ -64,11 +66,19 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dX0-3V-vYT">
+                    <rect key="frame" x="20" y="254.5" width="32" height="28"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <state key="normal" title="Clear"/>
+                    <connections>
+                        <action selector="clearBtnTapped:" destination="-1" eventType="touchUpInside" id="2b7-ly-nGF"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="0.16004245419999999" green="0.80605508770000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="Sfw-d6-caf" firstAttribute="top" secondItem="Xn7-Wf-Zpc" secondAttribute="bottom" constant="20" id="1KR-at-cbT"/>
-                <constraint firstItem="5Wx-EZ-emu" firstAttribute="top" secondItem="Sfw-d6-caf" secondAttribute="bottom" constant="50" id="9ES-oF-pmh"/>
+                <constraint firstItem="Sfw-d6-caf" firstAttribute="top" secondItem="Xn7-Wf-Zpc" secondAttribute="bottom" constant="10" id="1KR-at-cbT"/>
+                <constraint firstItem="5Wx-EZ-emu" firstAttribute="top" secondItem="Sfw-d6-caf" secondAttribute="bottom" constant="25" id="9ES-oF-pmh"/>
                 <constraint firstItem="bp3-0Q-UCp" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="Kte-c8-Ykr"/>
                 <constraint firstItem="Xn7-Wf-Zpc" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="L0X-cV-LaE"/>
                 <constraint firstItem="0ce-4L-n4V" firstAttribute="centerY" secondItem="Xn7-Wf-Zpc" secondAttribute="centerY" id="LXx-aG-rag"/>
@@ -80,9 +90,11 @@
                 <constraint firstItem="kU1-Pp-gv7" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="m1m-fb-DL5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="5Wx-EZ-emu" secondAttribute="trailing" constant="20" id="mBA-xo-vHN"/>
                 <constraint firstItem="bp3-0Q-UCp" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="30" id="mKP-yQ-Wpf"/>
+                <constraint firstItem="dX0-3V-vYT" firstAttribute="top" secondItem="Xn7-Wf-Zpc" secondAttribute="bottom" constant="10" id="mUN-yc-7Y6"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="kU1-Pp-gv7" secondAttribute="trailing" constant="20" id="p9e-AR-b6c"/>
                 <constraint firstItem="0ce-4L-n4V" firstAttribute="leading" secondItem="Xn7-Wf-Zpc" secondAttribute="trailing" constant="10" id="s3Q-P4-rJw"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bp3-0Q-UCp" secondAttribute="trailing" constant="20" id="wfN-OR-08p"/>
+                <constraint firstItem="dX0-3V-vYT" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="x8J-0F-PSc"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="132" y="128"/>
