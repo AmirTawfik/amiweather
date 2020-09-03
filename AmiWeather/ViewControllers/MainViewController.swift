@@ -79,8 +79,14 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
         }
         
         // open weather days forcast screen
-        
+        let weatherForecastVC = WeatherForecastTableViewController()
+        weatherForecastVC.locationDesc = currentLocationDesc
+        weatherForecastVC.locationLat = self.currentLocationLat
+        weatherForecastVC.locationLon = self.currentLocationLon
+        self.navigationController?.pushViewController(weatherForecastVC, animated: true)
     }
+    
+
     
     func hideKeyboard() {
         searchTF.resignFirstResponder()
