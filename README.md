@@ -10,4 +10,4 @@ I used Alamofire for networking
 
 I do not include pods in the repo, so please run pod install first then run project
 
-
+I also have included a simple demo video
