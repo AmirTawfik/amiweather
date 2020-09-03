@@ -10,6 +10,8 @@ import UIKit
 
 class WeatherForecastTableViewController: UITableViewController {
     
+
+    
     var locationDesc: String = ""
     var locationLat: Double = 0.0
     var locationLon: Double = 0.0
@@ -21,9 +23,18 @@ class WeatherForecastTableViewController: UITableViewController {
 
         tableView.register(UINib(nibName: "WeatherForecastTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastCell")
 
-        getForecastWeather()
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(callAPI), for: .valueChanged)
+        self.refreshControl = refreshControl
+        
+        self.refreshControl?.beginRefreshing()
+        callAPI()
     }
 
+    @objc func callAPI() {
+        getForecastWeather()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
@@ -37,6 +48,8 @@ class WeatherForecastTableViewController: UITableViewController {
     // call API here
     func getForecastWeather() {
         OpenWeatherMapService.service.getForecastWeather(lat: locationLat, lon: locationLon, cnt: 10) { responseData, error in
+            
+            self.refreshControl?.endRefreshing()
             
             do {
                 guard let data = responseData else {

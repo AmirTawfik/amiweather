@@ -14,8 +14,6 @@ class OpenWeatherMapService {
     
     let apiKey = "8ff69d53867e3b3673365dd7417c09db"
 
-    typealias ForecastWeatherCompletionHandler = (WeatherForecast?, OpenWeatherMapError?) -> Void
-
     func getForecastWeather(lat: Double,lon: Double, cnt: Int, completionHandler: @escaping (Data?, Error?) -> ()) {
         
         let url = URL(string: Constants.API_BASE_URL + Constants.API_ENDPOINT_FORECAST_WEATHER)
