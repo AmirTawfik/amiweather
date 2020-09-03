@@ -27,6 +27,19 @@
 		FCB3CC252500F9A400239B90 /* WeatherForecastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB3CC232500F9A400239B90 /* WeatherForecastTableViewCell.swift */; };
 		FCB3CC262500F9A400239B90 /* WeatherForecastTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC242500F9A400239B90 /* WeatherForecastTableViewCell.xib */; };
 		FCB3CC28250106B300239B90 /* HelperExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCB3CC27250106B300239B90 /* HelperExtensions.swift */; };
+		FCB3CC8225011AB600239B90 /* Icon-180x180.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7525011AB500239B90 /* Icon-180x180.png */; };
+		FCB3CC8325011AB600239B90 /* Icon-60x60.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7625011AB500239B90 /* Icon-60x60.png */; };
+		FCB3CC8425011AB600239B90 /* Icon-80x80.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7725011AB500239B90 /* Icon-80x80.png */; };
+		FCB3CC8525011AB600239B90 /* Icon-120x120.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7825011AB500239B90 /* Icon-120x120.png */; };
+		FCB3CC8625011AB600239B90 /* Icon-29x29.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7925011AB500239B90 /* Icon-29x29.png */; };
+		FCB3CC8725011AB600239B90 /* Icon-40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7A25011AB500239B90 /* Icon-40x40.png */; };
+		FCB3CC8825011AB600239B90 /* Icon-76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7B25011AB600239B90 /* Icon-76x76.png */; };
+		FCB3CC8925011AB600239B90 /* Icon-167x167.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7C25011AB600239B90 /* Icon-167x167.png */; };
+		FCB3CC8A25011AB600239B90 /* Icon-87x87.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7D25011AB600239B90 /* Icon-87x87.png */; };
+		FCB3CC8B25011AB600239B90 /* Icon-58x58.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7E25011AB600239B90 /* Icon-58x58.png */; };
+		FCB3CC8C25011AB600239B90 /* Icon-20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC7F25011AB600239B90 /* Icon-20x20.png */; };
+		FCB3CC8D25011AB600239B90 /* Icon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC8025011AB600239B90 /* Icon-1024x1024.png */; };
+		FCB3CC8E25011AB600239B90 /* Icon-152x152.png in Resources */ = {isa = PBXBuildFile; fileRef = FCB3CC8125011AB600239B90 /* Icon-152x152.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +92,19 @@
 		FCB3CC232500F9A400239B90 /* WeatherForecastTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherForecastTableViewCell.swift; sourceTree = "<group>"; };
 		FCB3CC242500F9A400239B90 /* WeatherForecastTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WeatherForecastTableViewCell.xib; sourceTree = "<group>"; };
 		FCB3CC27250106B300239B90 /* HelperExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperExtensions.swift; sourceTree = "<group>"; };
+		FCB3CC7525011AB500239B90 /* Icon-180x180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-180x180.png"; sourceTree = "<group>"; };
+		FCB3CC7625011AB500239B90 /* Icon-60x60.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60x60.png"; sourceTree = "<group>"; };
+		FCB3CC7725011AB500239B90 /* Icon-80x80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-80x80.png"; sourceTree = "<group>"; };
+		FCB3CC7825011AB500239B90 /* Icon-120x120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-120x120.png"; sourceTree = "<group>"; };
+		FCB3CC7925011AB500239B90 /* Icon-29x29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-29x29.png"; sourceTree = "<group>"; };
+		FCB3CC7A25011AB500239B90 /* Icon-40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-40x40.png"; sourceTree = "<group>"; };
+		FCB3CC7B25011AB600239B90 /* Icon-76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-76x76.png"; sourceTree = "<group>"; };
+		FCB3CC7C25011AB600239B90 /* Icon-167x167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-167x167.png"; sourceTree = "<group>"; };
+		FCB3CC7D25011AB600239B90 /* Icon-87x87.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-87x87.png"; sourceTree = "<group>"; };
+		FCB3CC7E25011AB600239B90 /* Icon-58x58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-58x58.png"; sourceTree = "<group>"; };
+		FCB3CC7F25011AB600239B90 /* Icon-20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-20x20.png"; sourceTree = "<group>"; };
+		FCB3CC8025011AB600239B90 /* Icon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-1024x1024.png"; sourceTree = "<group>"; };
+		FCB3CC8125011AB600239B90 /* Icon-152x152.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-152x152.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,10 +183,11 @@
 		FC0CFCF124FFC04600A80FB5 /* AmiWeather */ = {
 			isa = PBXGroup;
 			children = (
-				FCB3CC2C2501123700239B90 /* Helpers */,
 				FCB3CC2B250111CE00239B90 /* ViewControllers */,
-				FCB3CC2A250111C600239B90 /* Services */,
 				FCB3CC29250111BE00239B90 /* Models */,
+				FCB3CC2A250111C600239B90 /* Services */,
+				FCB3CC2C2501123700239B90 /* Helpers */,
+				FCB3CC7325011A9D00239B90 /* Resources */,
 				FC0CFCF224FFC04600A80FB5 /* AppDelegate.swift */,
 				FC0CFCFB24FFC04D00A80FB5 /* Assets.xcassets */,
 				FC0CFCFD24FFC04D00A80FB5 /* LaunchScreen.storyboard */,
@@ -225,6 +252,34 @@
 				FCB3CC27250106B300239B90 /* HelperExtensions.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FCB3CC7325011A9D00239B90 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				FCB3CC7425011AA500239B90 /* AppIcon */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		FCB3CC7425011AA500239B90 /* AppIcon */ = {
+			isa = PBXGroup;
+			children = (
+				FCB3CC7F25011AB600239B90 /* Icon-20x20.png */,
+				FCB3CC7925011AB500239B90 /* Icon-29x29.png */,
+				FCB3CC7A25011AB500239B90 /* Icon-40x40.png */,
+				FCB3CC7E25011AB600239B90 /* Icon-58x58.png */,
+				FCB3CC7625011AB500239B90 /* Icon-60x60.png */,
+				FCB3CC7B25011AB600239B90 /* Icon-76x76.png */,
+				FCB3CC7725011AB500239B90 /* Icon-80x80.png */,
+				FCB3CC7D25011AB600239B90 /* Icon-87x87.png */,
+				FCB3CC7825011AB500239B90 /* Icon-120x120.png */,
+				FCB3CC8125011AB600239B90 /* Icon-152x152.png */,
+				FCB3CC7C25011AB600239B90 /* Icon-167x167.png */,
+				FCB3CC7525011AB500239B90 /* Icon-180x180.png */,
+				FCB3CC8025011AB600239B90 /* Icon-1024x1024.png */,
+			);
+			path = AppIcon;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -339,11 +394,24 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC0CFCFF24FFC04D00A80FB5 /* LaunchScreen.storyboard in Resources */,
+				FCB3CC8925011AB600239B90 /* Icon-167x167.png in Resources */,
 				FC0CFCFC24FFC04D00A80FB5 /* Assets.xcassets in Resources */,
 				FC0CFD2925001DB500A80FB5 /* LocationOnMapViewController.xib in Resources */,
+				FCB3CC8325011AB600239B90 /* Icon-60x60.png in Resources */,
+				FCB3CC8D25011AB600239B90 /* Icon-1024x1024.png in Resources */,
 				FCB3CC222500F34500239B90 /* WeatherForecastTableViewController.xib in Resources */,
+				FCB3CC8525011AB600239B90 /* Icon-120x120.png in Resources */,
 				FCB3CC262500F9A400239B90 /* WeatherForecastTableViewCell.xib in Resources */,
+				FCB3CC8725011AB600239B90 /* Icon-40x40.png in Resources */,
+				FCB3CC8B25011AB600239B90 /* Icon-58x58.png in Resources */,
+				FCB3CC8E25011AB600239B90 /* Icon-152x152.png in Resources */,
+				FCB3CC8425011AB600239B90 /* Icon-80x80.png in Resources */,
+				FCB3CC8A25011AB600239B90 /* Icon-87x87.png in Resources */,
+				FCB3CC8825011AB600239B90 /* Icon-76x76.png in Resources */,
 				FC0CFD2524FFC2A800A80FB5 /* MainViewController.xib in Resources */,
+				FCB3CC8C25011AB600239B90 /* Icon-20x20.png in Resources */,
+				FCB3CC8625011AB600239B90 /* Icon-29x29.png in Resources */,
+				FCB3CC8225011AB600239B90 /* Icon-180x180.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

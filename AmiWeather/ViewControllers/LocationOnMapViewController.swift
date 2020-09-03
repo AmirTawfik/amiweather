@@ -13,6 +13,7 @@ class LocationOnMapViewController: UIViewController {
 
     @IBOutlet var mapView: GMSMapView!
     
+    // location releated vars
     var locationDesc = ""
     var locationLat = 0.0
     var locationLon = 0.0
@@ -28,6 +29,7 @@ class LocationOnMapViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         
+        // setup map and show selected location on it
         setupMap()
     }
 
@@ -41,6 +43,7 @@ class LocationOnMapViewController: UIViewController {
         self.mapView.camera = camera
         mapView.mapType = .normal
         
+        // add marker at current location
         let marker = GMSMarker()
         marker.position = CLLocationCoordinate2D(latitude: locationLat, longitude: locationLon)
         marker.title = "Location"

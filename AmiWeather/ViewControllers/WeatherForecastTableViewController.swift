@@ -9,28 +9,37 @@
 import UIKit
 
 class WeatherForecastTableViewController: UITableViewController {
-    
-
-    
+    // location related vars, used in API call, set by the caller object
     var locationDesc: String = ""
     var locationLat: Double = 0.0
     var locationLon: Double = 0.0
     
+    // array of forecasts
     var forecasts = [[String: AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        // set screen title
+        title = "10 Days Weather Forecast"
+        
+        // register custom cell to the table view
         tableView.register(UINib(nibName: "WeatherForecastTableViewCell", bundle: nil), forCellReuseIdentifier: "ForecastCell")
 
+        // setup refresh control
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action:  #selector(callAPI), for: .valueChanged)
         self.refreshControl = refreshControl
         
+        // reload data to show empty table view at start
+        tableView.reloadData()
+        
+        // for first time, simulate user pull to refresh
         self.refreshControl?.beginRefreshing()
         callAPI()
     }
 
+    // action attached to refresh control
     @objc func callAPI() {
         getForecastWeather()
     }
@@ -49,20 +58,22 @@ class WeatherForecastTableViewController: UITableViewController {
     func getForecastWeather() {
         OpenWeatherMapService.service.getForecastWeather(lat: locationLat, lon: locationLon, cnt: 10) { responseData, error in
             
+            // stop refresh control animation
             self.refreshControl?.endRefreshing()
             
             do {
                 guard let data = responseData else {
                      print("Error get weather forcast nil")
                      return
-                 }
-                 
+                }
+                
+                // get API response as JSON
                 let json = try JSONSerialization.jsonObject(with: data, options: .mutableContainers) as! [String: AnyObject]
                 
+                // get array of forecasts (10 days)
                 self.forecasts = json["list"] as! [[String: AnyObject]]
+                // reload data
                 self.tableView.reloadData()
-                
-                print(json)
                 
             } catch let err {
                print(err)
@@ -86,10 +97,15 @@ class WeatherForecastTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ForecastCell", for: indexPath) as! WeatherForecastTableViewCell
 
         let forecast = forecasts[indexPath.row]
-        
-        print(forecast)
-        
+
         // Configure the cell...
+        fillData(for: cell, with: forecast)
+        
+        return cell
+    }
+
+    // custom func to configure and fill data (presentation) for the cell
+    func fillData(for cell: WeatherForecastTableViewCell, with forecast: [String: AnyObject]) {
         /// Date
         if let dt = forecast["dt"] {
             let convertedDate = Double(truncating: dt as! NSNumber).getDateStringFromUTC()
@@ -141,53 +157,5 @@ class WeatherForecastTableViewController: UITableViewController {
         } else {
             cell.percipitationLbl.text = "0 mm"
         }
-        
-        return cell
     }
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
 }

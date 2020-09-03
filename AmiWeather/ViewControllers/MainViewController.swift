@@ -12,15 +12,15 @@ import GooglePlaces
 
 class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFieldDelegate, GMSAutocompleteViewControllerDelegate {
 
-    
-
     @IBOutlet var searchTF: UITextField!
     
+    // current selected location related vars
     var isLocationSelected = false
     var currentLocationDesc = ""
     var currentLocationLat = 0.0
     var currentLocationLon = 0.0
     
+    // location manager
     var locationManager: CLLocationManager?
     
     override func viewDidLoad() {
@@ -28,8 +28,10 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
 
         // Do any additional setup after loading the view.
         
+        // configure location manager
         locationManager = CLLocationManager()
         locationManager?.delegate = self
+        // ask for authorization from user
         locationManager?.requestAlwaysAuthorization()
         
         // hide navigation controller
@@ -66,6 +68,7 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
     }
     
     @IBAction func clearBtnTapped(_ sender: UIButton) {
+        // delete current location so no location is selected
         deleteCurrentLocation()
         searchTF.text = currentLocationDesc
     }
@@ -85,8 +88,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
         weatherForecastVC.locationLon = self.currentLocationLon
         self.navigationController?.pushViewController(weatherForecastVC, animated: true)
     }
-    
-
     
     func hideKeyboard() {
         searchTF.resignFirstResponder()
@@ -111,7 +112,6 @@ class MainViewController: UIViewController, CLLocationManagerDelegate, UITextFie
 
         // Display the autocomplete view controller.
         present(autocompleteController, animated: true, completion: nil)
-
     }
     
     /*

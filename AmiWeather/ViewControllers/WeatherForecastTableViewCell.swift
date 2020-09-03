@@ -12,13 +12,9 @@ class WeatherForecastTableViewCell: UITableViewCell {
 
     @IBOutlet var dayLbl: UILabel!
     @IBOutlet var temperatureLbl: UILabel!
-    
     @IBOutlet var pressureLbl: UILabel!
-    
     @IBOutlet var humidityLbl: UILabel!
-    
     @IBOutlet var conditionsLbl: UILabel!
-    
     @IBOutlet var percipitationLbl: UILabel!
     
     override func awakeFromNib() {
